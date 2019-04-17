@@ -18,18 +18,18 @@ extension Regift {
         
         // Text attributes
         let color = UIColor.white
-        var attributes = [NSForegroundColorAttributeName:color, NSFontAttributeName:font, NSStrokeColorAttributeName : UIColor.black, NSStrokeWidthAttributeName : -4] as [String : Any]
+        var attributes = [convertFromNSAttributedStringKey(NSAttributedString.Key.foregroundColor):color, convertFromNSAttributedStringKey(NSAttributedString.Key.font):font, convertFromNSAttributedStringKey(NSAttributedString.Key.strokeColor) : UIColor.black, convertFromNSAttributedStringKey(NSAttributedString.Key.strokeWidth) : -4] as [String : Any]
         
         // Get scale factor
-        let testSize:CGSize =  text.size(attributes: attributes)
+        let testSize:CGSize =  text.size(withAttributes: convertToOptionalNSAttributedStringKeyDictionary(attributes))
         let scaleFactor = testSize.height/360
         
         // Apply scale factor to attributes
         let scaledFont: UIFont = UIFont(name: "HelveticaNeue-CondensedBlack", size:image.size.height * scaleFactor)!
-        attributes[NSFontAttributeName] = scaledFont
+        attributes[convertFromNSAttributedStringKey(NSAttributedString.Key.font)] = scaledFont
         
         // Text size
-        let size:CGSize =  text.size(attributes: attributes)
+        let size:CGSize =  text.size(withAttributes: convertToOptionalNSAttributedStringKeyDictionary(attributes))
         let adjustedWidth = ceil(size.width)
         let adjustedHeight = ceil(size.height)
         
@@ -43,11 +43,22 @@ extension Regift {
         let bottomMargin = image.size.height/6.0
         let textOrigin  = CGPoint(x: sideMargin, y: image.size.height - bottomMargin)
         let secondRect = CGRect(x: textOrigin.x,y: textOrigin.y, width: adjustedWidth, height: adjustedHeight)
-        text.draw(with: secondRect, options:.usesLineFragmentOrigin, attributes: attributes, context:nil)
+        text.draw(with: secondRect, options:.usesLineFragmentOrigin, attributes: convertToOptionalNSAttributedStringKeyDictionary(attributes), context:nil)
         
         // Capture combined image and text
         let newImage = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
         return newImage!.cgImage!
     }
+}
+
+// Helper function inserted by Swift 4.2 migrator.
+fileprivate func convertFromNSAttributedStringKey(_ input: NSAttributedString.Key) -> String {
+	return input.rawValue
+}
+
+// Helper function inserted by Swift 4.2 migrator.
+fileprivate func convertToOptionalNSAttributedStringKeyDictionary(_ input: [String: Any]?) -> [NSAttributedString.Key: Any]? {
+	guard let input = input else { return nil }
+	return Dictionary(uniqueKeysWithValues: input.map { key, value in (NSAttributedString.Key(rawValue: key), value)})
 }
