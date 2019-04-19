@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		A93B3B081D2D3F7900BE1662 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = A93B3B041D2D3F7900BE1662 /* LaunchScreen.xib */; };
 		A93B3B091D2D3F7900BE1662 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A93B3B061D2D3F7900BE1662 /* Main.storyboard */; };
+		CF3911EE226A3C1100B5EFA2 /* UIImage+Gif.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF3911ED226A3C1100B5EFA2 /* UIImage+Gif.swift */; };
 		CFE3596D2267A7C70004E38C /* PreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFE359692267A7C60004E38C /* PreviewViewController.swift */; };
 		CFE3596E2267A7C70004E38C /* GiftEditorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFE3596A2267A7C60004E38C /* GiftEditorViewController.swift */; };
 		CFE3596F2267A7C70004E38C /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFE3596B2267A7C70004E38C /* WelcomeViewController.swift */; };
@@ -25,6 +26,7 @@
 /* Begin PBXFileReference section */
 		A93B3B051D2D3F7900BE1662 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		A93B3B071D2D3F7900BE1662 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		CF3911ED226A3C1100B5EFA2 /* UIImage+Gif.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Gif.swift"; sourceTree = "<group>"; };
 		CFE359692267A7C60004E38C /* PreviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PreviewViewController.swift; path = "../../ios-nd-gif-maker-swift/GifMaker_Swift_Template/PreviewViewController.swift"; sourceTree = "<group>"; };
 		CFE3596A2267A7C60004E38C /* GiftEditorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GiftEditorViewController.swift; path = "../../ios-nd-gif-maker-swift/GifMaker_Swift_Template/GiftEditorViewController.swift"; sourceTree = "<group>"; };
 		CFE3596B2267A7C70004E38C /* WelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WelcomeViewController.swift; path = "../../ios-nd-gif-maker-swift/GifMaker_Swift_Template/WelcomeViewController.swift"; sourceTree = "<group>"; };
@@ -95,6 +97,7 @@
 				CFE3596C2267A7C70004E38C /* UIViewController+Record.swift */,
 				CFE3596B2267A7C70004E38C /* WelcomeViewController.swift */,
 				EDFAA8EC1CDA99A500D2CB08 /* AppDelegate.swift */,
+				CF3911ED226A3C1100B5EFA2 /* UIImage+Gif.swift */,
 				A94CC3D71D21C85A00DC758E /* Assets */,
 				A94CC3D61D21C84C00DC758E /* Supporting Files */,
 				EDFAA9221CDA9C4700D2CB08 /* Regift Files */,
@@ -190,6 +193,7 @@
 				EDFAA9201CDA9C3100D2CB08 /* Regift.swift in Sources */,
 				EDFAA9211CDA9C3100D2CB08 /* RegiftCaption.swift in Sources */,
 				EDFAA8ED1CDA99A500D2CB08 /* AppDelegate.swift in Sources */,
+				CF3911EE226A3C1100B5EFA2 /* UIImage+Gif.swift in Sources */,
 				CFE3596D2267A7C70004E38C /* PreviewViewController.swift in Sources */,
 				EDFAA91F1CDA9C3100D2CB08 /* AVAssetImageGeneratorTimePoints.swift in Sources */,
 				CFE3596E2267A7C70004E38C /* GiftEditorViewController.swift in Sources */,

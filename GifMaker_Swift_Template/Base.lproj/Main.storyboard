@@ -166,7 +166,7 @@
         <!--Add a Caption-->
         <scene sceneID="7IM-YL-IPR">
             <objects>
-                <viewController storyboardIdentifier="GifEditorViewController" title="Add a Caption" useStoryboardIdentifierAsRestorationIdentifier="YES" id="gN0-HT-VRx" customClass="GifEditorViewController" customModule="GifMaker_Swift_Template" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="GifEditorViewController" title="Add a Caption" useStoryboardIdentifierAsRestorationIdentifier="YES" id="gN0-HT-VRx" customClass="GiftEditorViewController" customModule="GifMaker_Swift_Template" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="SRd-cZ-f0f"/>
                         <viewControllerLayoutGuide type="bottom" id="8Ay-xf-bgi"/>
@@ -207,6 +207,9 @@
                             <color key="tintColor" red="1" green="0.25490196079999999" blue="0.43921568630000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="gifImageView" destination="Idg-S9-dYE" id="pG2-5L-91K"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XSQ-pK-rKN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -331,7 +334,7 @@
         <!--Welcome View Controller-->
         <scene sceneID="MO7-ys-2QJ">
             <objects>
-                <viewController storyboardIdentifier="WelcomeViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="aXC-Xw-CZL" customClass="WelcomeViewController" customModule="GifMaker_Swift_Template" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="WelcomeViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="aXC-Xw-CZL" customClass="WelcomeViewController" customModule="GifMaker_Swift_Template" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="FzV-E8-2I8"/>
                         <viewControllerLayoutGuide type="bottom" id="IJD-un-28D"/>
@@ -471,6 +474,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="GOk-gI-dlu"/>
                     <connections>
+                        <outlet property="gifImageView" destination="Wun-5B-Ruk" id="Ffs-Ha-WVZ"/>
                         <segue destination="gN0-HT-VRx" kind="show" identifier="showGifEditor" id="wkV-9i-gKS"/>
                     </connections>
                 </viewController>
