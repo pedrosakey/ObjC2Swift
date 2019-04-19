@@ -17,5 +17,17 @@ GifMaker is an app that lets users create simple GIF animations from their iOS d
 - [x] Swift elements in swift 3 deprecreated. We must update
 - [x] I had to add Privacy Photo Additions Usage description
 
+#### Gift conversion
+- [x] Using Gifs in UIImageview we need an extension we are going to use this one:
+[SwiftGif](https://github.com/swiftgif/SwiftGif)
+
+- [X] Implement Regif methods Conversion video to Gif
+[Regif](https://github.com/matthewpalmer/Regift)
+
+- [X] Display the gif in gif editor
+
+![Convert video into Gif](https://drive.google.com/uc?id=1VeDea0N8Jyt5vPHSBh_lw5iNheEnRq3s)
+
+
 ## License
    MIT
