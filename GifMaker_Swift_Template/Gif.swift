@@ -16,14 +16,24 @@ public class Gif {
     let videoURL: URL
     let caption: String?
     let gifImage: UIImage?
-    let gifData: Data?
+    let gifData: NSData?
     
     init(url: URL, videoURL: URL, caption: String?) {
         self.url = url
         self.videoURL = videoURL
         self.caption = caption
         self.gifImage = UIImage.gif(url: url.absoluteString)!
-        self.gifData = nil
+        self.gifData = NSData(contentsOf: url)
+        
+        
+        
+//        do {
+//          try self.gifData = Data(contentsOf: url)
+//
+//        } catch {
+//            self.gifData = nil
+//        }
+        
     
     }
     

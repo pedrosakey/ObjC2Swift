@@ -10,6 +10,14 @@ GifMaker is an app that lets users create simple GIF animations from their iOS d
 
 ## In progress
 
+### Share the GIF
+- [x] Add the Gif to an activity items array
+- [x] Present an Activity View Controller
+
+![Share gif](https://drive.google.com/uc?id=1Vl0AxhgAM7j1y8gXfh33H3XxE3yew6hf)
+
+**warning** is not sharing gif file properly with all apps. For example gmail app
+
 ### Add caption
 
 - [x] Rewrite the Gif class

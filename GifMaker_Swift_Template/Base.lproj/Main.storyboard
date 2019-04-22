@@ -176,13 +176,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Idg-S9-dYE">
-                                <rect key="frame" x="20" y="99" width="374" height="374"/>
+                                <rect key="frame" x="20" y="101" width="374" height="374"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Idg-S9-dYE" secondAttribute="height" multiplier="1:1" id="VYW-pa-uQv"/>
                                 </constraints>
                             </imageView>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Add Caption" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Hx5-Iw-gBr">
-                                <rect key="frame" x="20" y="411" width="374" height="50"/>
+                                <rect key="frame" x="20" y="413" width="374" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="ZG3-3H-HnY"/>
                                 </constraints>
@@ -198,7 +198,7 @@
                             <constraint firstItem="Hx5-Iw-gBr" firstAttribute="bottom" secondItem="Idg-S9-dYE" secondAttribute="bottom" constant="-12" id="jJN-cY-b9h"/>
                             <constraint firstItem="Idg-S9-dYE" firstAttribute="trailing" secondItem="pNa-Y5-au7" secondAttribute="trailingMargin" id="n2q-Vp-Imz"/>
                             <constraint firstItem="Idg-S9-dYE" firstAttribute="leading" secondItem="pNa-Y5-au7" secondAttribute="leadingMargin" id="nwW-nq-7aP"/>
-                            <constraint firstItem="Idg-S9-dYE" firstAttribute="top" secondItem="SRd-cZ-f0f" secondAttribute="bottom" constant="11" id="zw6-c0-KUQ"/>
+                            <constraint firstItem="Idg-S9-dYE" firstAttribute="top" secondItem="SRd-cZ-f0f" secondAttribute="bottom" constant="13" id="zw6-c0-KUQ"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Title" id="98w-hN-q9u">
@@ -247,6 +247,9 @@
                                         <state key="normal" title="SHARE">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="shareGif:" destination="cB7-Y1-ZFX" eventType="touchUpInside" id="8Me-fc-Pki"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xoi-MZ-GNH">
                                         <rect key="frame" x="0.0" y="66" width="374" height="50"/>
