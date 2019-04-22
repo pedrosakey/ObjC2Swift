@@ -10,6 +10,16 @@ GifMaker is an app that lets users create simple GIF animations from their iOS d
 
 ## In progress
 
+### Add caption
+
+- [x] Rewrite the Gif class
+- [x] UITextFieldDelegate Methods
+- [x] keyboard notifications and adjustment methods could be implemented in Swift.
+- [x] Add a caption to the animated GIF
+- [x] Show add caption in GifPreview Controller
+
+![Add Caption](https://drive.google.com/uc?id=1VkoLlZDKJTQQb8458eMumsMMkbUMzI49)
+
 ### Convert a new recordly video into a gift
 #### Present a camera
 - [x] Add controllers
