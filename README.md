@@ -10,6 +10,17 @@ GifMaker is an app that lets users create simple GIF animations from their iOS d
 
 ## In progress
 
+
+#### Create an Action Sheet
+
+- [x] We add an action sheet as a part of View Controller 
+        _TODO_ Do the same as Generic and paste in snippets library
+- [x] Add launch method to photolibrar. Is not included in this section
+
+![Action Sheet](https://drive.google.com/uc?id=1Vn1WLDRIWOYBV_G-zMGkHpMiMT349Bga)
+
+
+
 ### Share the GIF
 - [x] Add the Gif to an activity items array
 - [x] Present an Activity View Controller
