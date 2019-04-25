@@ -10,13 +10,6 @@ import Foundation
 import UIKit
 import MobileCoreServices
 
-// MARK: Regift constants
-let frameCount = 16
-let delayTime: Float = 0.2
-let loopCount = 0 // 0 means loop forever
-
-
-
 
 extension UIViewController {
     
@@ -55,7 +48,7 @@ extension UIViewController {
         let recordVideoController = UIImagePickerController()
         recordVideoController.sourceType = UIImagePickerController.SourceType.camera
         recordVideoController.mediaTypes = [kUTTypeMovie as String]
-        recordVideoController.allowsEditing = false
+        recordVideoController.allowsEditing = true
         recordVideoController.delegate = self
         
         present(recordVideoController, animated: true, completion: nil)
@@ -89,14 +82,26 @@ extension UIViewController: UINavigationControllerDelegate {}
 extension UIViewController: UIImagePickerControllerDelegate {
     
     public func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        
         let mediaType = info[UIImagePickerController.InfoKey.mediaType] as! String
         
         if mediaType == kUTTypeMovie as String {
             // URL Video recorded
             let videoURL = info[UIImagePickerController.InfoKey.mediaURL] as! NSURL
             UISaveVideoAtPathToSavedPhotosAlbum(videoURL.path!, nil, nil, nil)
-            dismiss(animated: true, completion: nil)
-            convertVideoToGif(videoURL: videoURL as URL)
+            
+            // If video was trimmed
+            if let  startTrim = info[UIImagePickerController.InfoKey.init(rawValue: "_UIImagePickerControllerVideoEditingStart")] as! NSNumber?,
+                let  endTrim = info[UIImagePickerController.InfoKey.init(rawValue: "_UIImagePickerControllerVideoEditingEnd")] as! NSNumber? {
+                // TRIMMED
+                let duration = endTrim.floatValue - startTrim.floatValue
+                convertVideoToGif(videoURL: videoURL as URL, startTrim.floatValue, duration)
+                
+            } else {
+                // UNTRIMMED
+                convertVideoToGif(videoURL: videoURL as URL, nil, nil)
+            }
+
         }
         
         
@@ -107,11 +112,13 @@ extension UIViewController: UIImagePickerControllerDelegate {
     }
     
 //GIF conversion methods
-    func convertVideoToGif(videoURL: URL) {
-        let regift = Regift(sourceFileURL: videoURL, frameCount: frameCount, delayTime: delayTime, loopCount: loopCount)
+    func convertVideoToGif(videoURL: URL,_ start: Float?,_ duration: Float?) {
+        
+        // Background process
+        dismiss(animated: true, completion: nil)
+
         //URL we GIF is stored
-        let gifURL = regift.createGif()
-        let gif = Gif(url: gifURL!, videoURL: videoURL, caption: nil)
+        let gif = Gif(videoURL: videoURL, start: start, duration: duration)
         displayGIF(gif: gif)
     }
     

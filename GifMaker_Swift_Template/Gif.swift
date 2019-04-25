@@ -10,35 +10,75 @@ import Foundation
 import UIKit
 
 
+// MARK: Regift constants
+let frameCount = 16
+let delayTime: Float = 0.2
+let loopCount = 0 // 0 means loop forever
+
 public class Gif {
     
-    let url : URL
-    let videoURL: URL
-    let caption: String?
+    let regift : Regift;
+    let gifUrl : URL?
+    let videoURL: URL?
     let gifImage: UIImage?
+   // let gifImageWithCaption: UIImage?
     let gifData: NSData?
+    let start: Float?
+    let duration:Float?
+    let caption: String?
+    let font: UIFont?
     
-    init(url: URL, videoURL: URL, caption: String?) {
-        self.url = url
+    // New gif from video url
+    init(videoURL: URL, start: Float?, duration: Float?, caption: String?, font: UIFont?) {
+        // Regift
+        self.start = start
+        self.duration = duration
+        if let start = start {
+            //Trimmed
+            self.regift = Regift(sourceFileURL: videoURL,
+                            destinationFileURL: nil,
+                            startTime: start,
+                            duration: duration!,
+                            frameRate: frameCount,
+                            loopCount: loopCount)
+            
+        } else {
+            //Untrimmed
+            self.regift = Regift(sourceFileURL:videoURL,
+                            frameCount: frameCount,
+                            delayTime: delayTime,
+                            loopCount: loopCount)
+        }
+        
+        self.gifUrl = regift.createGif()
+        
         self.videoURL = videoURL
+        if let gifUrl = self.gifUrl {
+        self.gifImage = UIImage.gif(url: gifUrl.absoluteString)
+            // Add caption
+        self.gifData = NSData(contentsOf: gifUrl)
+        } else {
+            self.gifImage = nil
+            self.gifData = nil
+        }
+       
+        
         self.caption = caption
-        self.gifImage = UIImage.gif(url: url.absoluteString)!
-        self.gifData = NSData(contentsOf: url)
-        
-        
-        
-//        do {
-//          try self.gifData = Data(contentsOf: url)
-//
-//        } catch {
-//            self.gifData = nil
-//        }
-        
-    
+        self.font = font
+       
     }
     
-//    init(name:String) {
-//        self.gifImage = UIImage.gif(name: name)
-//    }
     
+    
+    convenience init (videoURL: URL, start: Float?, duration: Float?) {
+        self.init(videoURL: videoURL, start: start, duration: duration, caption: nil, font:nil)
+    }
+    
+    convenience init(oldGif: Gif, caption: String?, font: UIFont?) {
+        self.init(videoURL: oldGif.videoURL!, start: oldGif.start, duration: oldGif.duration, caption: caption, font: font)
+    }
+    
+    
+    // We can add caption to image but if we want to share a gif we need to put all together
+ 
 }

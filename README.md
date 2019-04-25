@@ -10,12 +10,35 @@ GifMaker is an app that lets users create simple GIF animations from their iOS d
 
 ## In progress
 
+#### Enable Video Trimming
+
+- [x] Start trim selection and End Trim selection. If we don't select values are nil
+
+__// MARK: - UIViewController: UIImagePickerControllerDelegate__
+```
+  // If video was trimmed
+            if let  startTrim = info[UIImagePickerController.InfoKey.init(rawValue: "_UIImagePickerControllerVideoEditingStart")] as! NSNumber?,
+                let  endTrim = info[UIImagePickerController.InfoKey.init(rawValue: "_UIImagePickerControllerVideoEditingEnd")] as! NSNumber? {
+
+```
+- [x] Gif refactoring.
+
+* Gif class is now a wrapper class of Regift class. This means that we can create Gif directly with this class.
+
+- [x] App workflow
+
+* We add a new textField to **GifPreviewController** . 
+1. Create a Gif without caption for showing in editor.
+2. User can or not add caption in **GifEditorController**
+3. Show the gif with caption overlay in **GifPreviewController**
+4. When user **CREATE** or **SHARE** new gif will be created integrating caption.
+
 
 #### Create an Action Sheet
 
 - [x] We add an action sheet as a part of View Controller 
         _TODO_ Do the same as Generic and paste in snippets library
-- [x] Add launch method to photolibrar. Is not included in this section
+- [x] Add launch method to photolibrary. Is not included in this section
 
 ![Action Sheet](https://drive.google.com/uc?id=1Vn1WLDRIWOYBV_G-zMGkHpMiMT349Bga)
 

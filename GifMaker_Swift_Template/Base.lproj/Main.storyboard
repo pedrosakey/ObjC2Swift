@@ -264,6 +264,18 @@
                                     </button>
                                 </subviews>
                             </stackView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5TV-gn-8FI">
+                                <rect key="frame" x="0.0" y="388" width="414" height="50"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" notEnabled="YES"/>
+                                </accessibility>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="sN4-DH-tlR"/>
+                                </constraints>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="30"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" red="0.18039215689999999" green="0.23921568630000001" blue="0.28235294119999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -271,13 +283,17 @@
                             <constraint firstItem="HQu-c2-zTO" firstAttribute="top" secondItem="Alv-iW-6pc" secondAttribute="topMargin" constant="20" id="BMd-cM-52I"/>
                             <constraint firstItem="zEa-bK-uMp" firstAttribute="top" secondItem="aqi-WW-nfX" secondAttribute="bottom" constant="20" id="Ibz-ed-k9d"/>
                             <constraint firstItem="aqi-WW-nfX" firstAttribute="leading" secondItem="Alv-iW-6pc" secondAttribute="leadingMargin" id="NdQ-Y0-uYO"/>
+                            <constraint firstItem="5TV-gn-8FI" firstAttribute="leading" secondItem="Alv-iW-6pc" secondAttribute="leading" id="OU4-7T-nJw"/>
+                            <constraint firstItem="5TV-gn-8FI" firstAttribute="bottom" secondItem="HQu-c2-zTO" secondAttribute="bottom" id="opR-5j-sAx"/>
                             <constraint firstAttribute="trailingMargin" secondItem="aqi-WW-nfX" secondAttribute="trailing" id="wVr-2y-Gea"/>
+                            <constraint firstAttribute="trailing" secondItem="5TV-gn-8FI" secondAttribute="trailing" id="wxL-dd-vnA"/>
                             <constraint firstItem="HQu-c2-zTO" firstAttribute="trailing" secondItem="Alv-iW-6pc" secondAttribute="trailingMargin" id="zRI-vt-qbN"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Preview" id="SWX-N6-oaS"/>
                     <connections>
                         <outlet property="gifImageView" destination="HQu-c2-zTO" id="aQ8-Rc-HFb"/>
+                        <outlet property="newCaption" destination="5TV-gn-8FI" id="rnn-Lq-DcV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KCC-tI-bRp" userLabel="First Responder" sceneMemberID="firstResponder"/>

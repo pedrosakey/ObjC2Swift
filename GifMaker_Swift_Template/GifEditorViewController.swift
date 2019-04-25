@@ -13,6 +13,7 @@ class GifEditorViewController: UIViewController {
     @IBOutlet weak var gifImageView: UIImageView!
     @IBOutlet weak var captionTextField: UITextField!
     var gif: Gif?
+    
     @IBAction func gifPreview(_ sender: Any) {
         self.presentPreview(sender: nil)
     }
@@ -24,20 +25,8 @@ class GifEditorViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
     
      // MARK: - UITextFieldDelegate methods
     func textFieldDidBeginEditing(textField: UITextField) {
@@ -55,12 +44,11 @@ class GifEditorViewController: UIViewController {
         let gifPreviewVC = storyboard?.instantiateViewController(withIdentifier: "GifPreviewViewController") as! GifPreviewViewController
         
         // Recreate the gif with the caption
-        let regift = Regift(sourceFileURL: gif!.videoURL, frameCount: frameCount, delayTime: delayTime, loopCount: loopCount)
-        let gifURLWithCaption = regift.createGif(captionTextField.text, font: captionTextField.font)
+        let newGif = Gif(oldGif: self.gif!, caption: captionTextField.text, font: captionTextField.font)
+        self.gif = newGif
         
-        // Parse to our model
-         let newGif = Gif(url: gifURLWithCaption!, videoURL: gif!.videoURL, caption: captionTextField.text)
-         gifPreviewVC.gif = newGif
+        // Gif to GifPreviewVC
+        gifPreviewVC.gif = gif
         
         navigationController?.pushViewController(gifPreviewVC, animated: true)
         
@@ -68,7 +56,7 @@ class GifEditorViewController: UIViewController {
     }
 }
 
- // MARK: - Observer and respond to keyboards notifications
+// MARK: - Observer and respond to keyboards notifications
 // Methods to adjust the keyboard
 extension GifEditorViewController {
     func subscribeToKeyboardNotifications() {

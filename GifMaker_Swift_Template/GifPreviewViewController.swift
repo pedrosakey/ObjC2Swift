@@ -13,11 +13,13 @@ class GifPreviewViewController: UIViewController {
     var gif: Gif?
 
     @IBOutlet weak var gifImageView: UIImageView!
+    @IBOutlet weak var newCaption: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        // Disable interaction in Storyboard...
         gifImageView.image = gif?.gifImage
-        
+        newCaption.text = gif?.caption
     }
     
     @IBAction func shareGif(_ sender: Any) {
