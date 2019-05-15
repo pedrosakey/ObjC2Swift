@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 import MobileCoreServices
 import AVFoundation
+import AVKit
 
 
 extension UIViewController {
@@ -117,6 +118,58 @@ extension UIViewController: UIImagePickerControllerDelegate {
     // MARK: - Show GIF methods
     func cropVideoToSquare(videoURL: URL, start: NSNumber?, duration: NSNumber?) {
         
+        // output file
+        let docFolder = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).last
+        let outputPath = URL(fileURLWithPath: docFolder ?? "").appendingPathComponent("output2.mov")
+        if FileManager.default.fileExists(atPath: outputPath.absoluteString) {
+            do {
+                try FileManager.default.removeItem(atPath: outputPath.absoluteString)
+            } catch {
+            }
+        }
+        
+        // input file
+        let asset = AVAsset(url: videoURL)
+        
+        let composition = AVMutableComposition()
+        composition.addMutableTrack(withMediaType: .video, preferredTrackID: kCMPersistentTrackID_Invalid)
+        
+        // input clip
+        let clipVideoTrack: AVAssetTrack = asset.tracks(withMediaType: .video)[0]
+        
+        // make it square
+        let videoComposition = AVMutableVideoComposition()
+        videoComposition.renderSize = CGSize(width: clipVideoTrack.naturalSize.height, height: clipVideoTrack.naturalSize.height)
+        videoComposition.frameDuration = CMTimeMake(value: 1, timescale: 30)
+        
+        let instruction = AVMutableVideoCompositionInstruction()
+        instruction.timeRange = CMTimeRangeMake(start: CMTime.zero, duration: CMTimeMakeWithSeconds(60, preferredTimescale: 30))
+        
+        // rotate to portrait
+        let transformer = AVMutableVideoCompositionLayerInstruction(assetTrack: clipVideoTrack)
+        let t1 = CGAffineTransform(translationX: clipVideoTrack.naturalSize.height, y: -(clipVideoTrack.naturalSize.width - clipVideoTrack.naturalSize.height) / 2)
+        let t2: CGAffineTransform = t1.rotated(by: CGFloat(Double.pi/2))
+        
+        let finalTransform: CGAffineTransform = t2
+        transformer.setTransform(finalTransform, at: .zero)
+        instruction.layerInstructions = [transformer]
+        videoComposition.instructions = [instruction]
+        
+        // export
+        let exporter = AVAssetExportSession(asset: asset, presetName: AVAssetExportPresetHighestQuality)
+        exporter?.videoComposition = videoComposition
+        exporter?.outputURL = outputPath
+        exporter?.outputFileType = .mov
+        
+        exporter?.exportAsynchronously(completionHandler: {
+            if let squareURL = exporter?.outputURL {
+            self.convertVideoToGif(videoURL:squareURL, start: nil, duration: nil)
+            print("Exporting done!")
+            }
+        })
+        
+        
+        /*
         // Initialize AVAsset and AVAssetTrack
         let videoAsset = AVAsset(url:videoURL)
         let videoTrack = videoAsset.tracks(withMediaType: AVMediaType.video)[0]
@@ -148,7 +201,7 @@ extension UIViewController: UIImagePickerControllerDelegate {
         
         // Export the square video
         let exporter = AVAssetExportSession(asset:videoAsset, presetName:AVAssetExportPresetHighestQuality)!
-        exporter.videoComposition = videoComposition
+        //exporter.videoComposition = videoComposition
         let path = createPath()
         exporter.outputURL = URL(fileURLWithPath:path)
         exporter.outputFileType = AVFileType.mov
@@ -157,6 +210,8 @@ extension UIViewController: UIImagePickerControllerDelegate {
             let squareURL = exporter.outputURL!
             self.convertVideoToGif(videoURL:squareURL, start: start?.floatValue, duration: duration?.floatValue)
         }
+ 
+         */
     }
 
     

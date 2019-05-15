@@ -10,6 +10,12 @@ GifMaker is an app that lets users create simple GIF animations from their iOS d
 
 ## In progress
 
+#### Crop video
+ 
+- [x]  Fix problem with outpath
+ 
+![Crop Video](https://drive.google.com/uc?id=1cqfvYvN2XsNVPOA1WJKblmuf_smlJjSU)
+
 #### Enable Video Trimming
 
 - [x] Start trim selection and End Trim selection. If we don't select values are nil
@@ -33,6 +39,13 @@ __// MARK: - UIViewController: UIImagePickerControllerDelegate__
 3. Show the gif with caption overlay in **GifPreviewController**
 4. When user **CREATE** or **SHARE** new gif will be created integrating caption.
 
+- [x] Edit saved videos
+
+* Can't edit saved videos with image **UIImagePickerController**
+
+> The default camera interface supports editing of previously-saved movies. Editing involves trimming from the start or end of the movie, then saving the trimmed movie. To display an interface dedicated to movie editing, rather than one that also supports recording new movies, use the UIVideoEditorController class instead of this one. See UIVideoEditorController.
+
+[Apple Developer Documentation](https://developer.apple.com/documentation/uikit/uiimagepickercontroller#1658349)
 
 #### Create an Action Sheet
 
