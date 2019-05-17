@@ -8,11 +8,14 @@
 
 import UIKit
 
+
+
 class GifEditorViewController: UIViewController {
     
     @IBOutlet weak var gifImageView: UIImageView!
     @IBOutlet weak var captionTextField: UITextField!
     var gif: Gif?
+    var context: PreviewViewControllerDelegate?
     
     @IBAction func gifPreview(_ sender: Any) {
         self.presentPreview(sender: nil)
@@ -49,6 +52,7 @@ class GifEditorViewController: UIViewController {
         
         // Gif to GifPreviewVC
         gifPreviewVC.gif = gif
+        gifPreviewVC.context = context
         
         navigationController?.pushViewController(gifPreviewVC, animated: true)
         

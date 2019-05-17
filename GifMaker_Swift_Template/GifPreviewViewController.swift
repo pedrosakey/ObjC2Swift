@@ -8,18 +8,35 @@
 
 import UIKit
 
+protocol PreviewViewControllerDelegate {
+    func addToCollection(gif:Gif?)
+}
+
+
 class GifPreviewViewController: UIViewController {
     
     var gif: Gif?
+    var context: PreviewViewControllerDelegate?
 
     @IBOutlet weak var gifImageView: UIImageView!
     @IBOutlet weak var newCaption: UITextField!
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Disable interaction in Storyboard...
         gifImageView.image = gif?.gifImage
         newCaption.text = gif?.caption
+    }
+    // MARK: - IBActions
+    @IBAction func createAndSave() {
+        // Create new Gif with caption
+        if let gif = gif {
+        let newGif = Gif(oldGif: gif, caption: newCaption.text, font: newCaption.font)
+        context?.addToCollection(gif: newGif)
+        }
+        performSegue(withIdentifier: "unwindToSavedGifsVC", sender: nil)
     }
     
     @IBAction func shareGif(_ sender: Any) {
@@ -41,6 +58,10 @@ class GifPreviewViewController: UIViewController {
         // Present
         navigationController?.present(activityVC, animated: true, completion: nil)
         
+    }
+    
+    func popToRootViewController () {
+        dismiss(animated:true)
     }
 
 }

@@ -42,6 +42,7 @@ extension UIViewController {
         //Present
         self.present(newGifActionSheet, animated: true, completion: nil)
         
+        
     }
     
     
@@ -74,7 +75,9 @@ extension UIViewController {
 
 // MARK: - UIViewController: UINavigationControllerDelegate
 
-extension UIViewController: UINavigationControllerDelegate {}
+extension UIViewController: UINavigationControllerDelegate {
+    
+}
 
 // MARK: - UIViewController: UIImagePickerControllerDelegate
 
@@ -85,7 +88,7 @@ extension UIViewController: UIImagePickerControllerDelegate {
         let mediaType = info[UIImagePickerController.InfoKey.mediaType] as! String
         
         if mediaType == kUTTypeMovie as String {
-            // URL Video recorded
+            // URL Video recorded or selected
             let videoURL = info[UIImagePickerController.InfoKey.mediaURL] as! NSURL
             UISaveVideoAtPathToSavedPhotosAlbum(videoURL.path!, nil, nil, nil)
            
@@ -109,6 +112,7 @@ extension UIViewController: UIImagePickerControllerDelegate {
         
         
     }
+    
     
     public func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         dismiss(animated: true, completion: nil)
@@ -167,51 +171,6 @@ extension UIViewController: UIImagePickerControllerDelegate {
             print("Exporting done!")
             }
         })
-        
-        
-        /*
-        // Initialize AVAsset and AVAssetTrack
-        let videoAsset = AVAsset(url:videoURL)
-        let videoTrack = videoAsset.tracks(withMediaType: AVMediaType.video)[0]
-        
-       
-        // Initialize video composition and set properties
-        let videoComposition = AVMutableVideoComposition()
-        
-        
-        videoComposition.renderSize = CGSize(width: videoTrack.naturalSize.width, height: videoTrack.naturalSize.height)
-        videoComposition.frameDuration = CMTimeMake(value: 1, timescale: 30)
-        
-        // Initialize instruction and set time range
-        let instruction = AVMutableVideoCompositionInstruction()
-        instruction.timeRange = CMTimeRangeMake(start: CMTime.zero, duration: CMTimeMakeWithSeconds(60, preferredTimescale: 30) )
-        
-        //Center the cropped video
-        let transformer = AVMutableVideoCompositionLayerInstruction(assetTrack:videoTrack)
-        let firstTransform = CGAffineTransform(translationX: videoTrack.naturalSize.height, y: -(videoTrack.naturalSize.width - videoTrack.naturalSize.height)/2.0)
-        
-        //Rotate 90 degrees to portrait
-        let halfOfPi: CGFloat = CGFloat(Double.pi/2)
-        let secondTransform = firstTransform.rotated(by: halfOfPi) //(firstTransform, halfOfPi);
-        let finalTransform = secondTransform;
-        transformer.setTransform(finalTransform, at:CMTime.zero)
-        instruction.layerInstructions = [transformer]
-        videoComposition.instructions = [instruction]
- 
-        
-        // Export the square video
-        let exporter = AVAssetExportSession(asset:videoAsset, presetName:AVAssetExportPresetHighestQuality)!
-        //exporter.videoComposition = videoComposition
-        let path = createPath()
-        exporter.outputURL = URL(fileURLWithPath:path)
-        exporter.outputFileType = AVFileType.mov
-        
-        exporter.exportAsynchronously {
-            let squareURL = exporter.outputURL!
-            self.convertVideoToGif(videoURL:squareURL, start: start?.floatValue, duration: duration?.floatValue)
-        }
- 
-         */
     }
 
     
@@ -252,6 +211,8 @@ extension UIViewController: UIImagePickerControllerDelegate {
     func displayGIF(gif: Gif) {
         let gifEditorVC = storyboard?.instantiateViewController(withIdentifier: "GifEditorViewController") as! GifEditorViewController
         gifEditorVC.gif = gif
+        gifEditorVC.context = self as? SavedGifsViewController
+        
         navigationController?.pushViewController(gifEditorVC, animated: true)
     }
 }

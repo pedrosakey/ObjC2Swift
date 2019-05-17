@@ -17,7 +17,6 @@ let loopCount = 0 // 0 means loop forever
 
 public class Gif {
     
-    let regift : Regift;
     let gifUrl : URL?
     let videoURL: URL?
     let gifImage: UIImage?
@@ -30,12 +29,13 @@ public class Gif {
     
     // New gif from video url
     init(videoURL: URL, start: Float?, duration: Float?, caption: String?, font: UIFont?) {
+        let regift : Regift;
         // Regift
         self.start = start
         self.duration = duration
         if let start = start {
             //Trimmed
-            self.regift = Regift(sourceFileURL: videoURL,
+            regift = Regift(sourceFileURL: videoURL,
                             destinationFileURL: nil,
                             startTime: start,
                             duration: duration!,
@@ -44,7 +44,7 @@ public class Gif {
             
         } else {
             //Untrimmed
-            self.regift = Regift(sourceFileURL:videoURL,
+            regift = Regift(sourceFileURL:videoURL,
                             frameCount: frameCount,
                             delayTime: delayTime,
                             loopCount: loopCount)
