@@ -122,9 +122,13 @@ extension UIViewController: UIImagePickerControllerDelegate {
     // MARK: - Show GIF methods
     func cropVideoToSquare(videoURL: URL, start: NSNumber?, duration: NSNumber?) {
         
+        // Random Video Game
+        var randomVideoName : String = String(Int.random(in: 10000 ..< 99999))
+        randomVideoName.append(".mov")
+        
         // output file
         let docFolder = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).last
-        let outputPath = URL(fileURLWithPath: docFolder ?? "").appendingPathComponent("output2.mov")
+        let outputPath = URL(fileURLWithPath: docFolder ?? "").appendingPathComponent(randomVideoName)
         if FileManager.default.fileExists(atPath: outputPath.absoluteString) {
             do {
                 try FileManager.default.removeItem(atPath: outputPath.absoluteString)
@@ -200,16 +204,15 @@ extension UIViewController: UIImagePickerControllerDelegate {
         // Background process
         DispatchQueue.main.async() {
             self.dismiss(animated: true, completion: nil)
+            //URL we GIF is stored
+            let gif = Gif(videoURL: videoURL, start: start, duration: duration)
+            self.displayGIF(gif: gif)
         }
-        
-      
-        //URL we GIF is stored
-        let gif = Gif(videoURL: videoURL, start: start, duration: duration)
-        displayGIF(gif: gif)
     }
     
     func displayGIF(gif: Gif) {
         let gifEditorVC = storyboard?.instantiateViewController(withIdentifier: "GifEditorViewController") as! GifEditorViewController
+
         gifEditorVC.gif = gif
         gifEditorVC.context = self as? SavedGifsViewController
         
