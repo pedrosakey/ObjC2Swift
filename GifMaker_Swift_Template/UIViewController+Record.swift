@@ -122,7 +122,7 @@ extension UIViewController: UIImagePickerControllerDelegate {
     // MARK: - Show GIF methods
     func cropVideoToSquare(videoURL: URL, start: NSNumber?, duration: NSNumber?) {
         
-        // Random Video Game
+        // Random Video Name
         var randomVideoName : String = String(Int.random(in: 10000 ..< 99999))
         randomVideoName.append(".mov")
         

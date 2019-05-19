@@ -47,8 +47,8 @@ class GifEditorViewController: UIViewController {
         let gifPreviewVC = storyboard?.instantiateViewController(withIdentifier: "GifPreviewViewController") as! GifPreviewViewController
         
         // Recreate the gif with the caption
-        let newGif = Gif(oldGif: self.gif!, caption: captionTextField.text, font: captionTextField.font)
-        self.gif = newGif
+         let newGif = Gif(oldGif: self.gif!, caption: captionTextField.text, font: captionTextField.font)
+         self.gif = newGif
         
         // Gif to GifPreviewVC
         gifPreviewVC.gif = gif

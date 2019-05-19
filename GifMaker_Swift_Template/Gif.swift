@@ -17,16 +17,18 @@ let loopCount = 0 // 0 means loop forever
 
 public class Gif {
     
-    let gifUrl : URL?
     let videoURL: URL?
-    let gifImage: UIImage?
-   // let gifImageWithCaption: UIImage?
-    let gifData: NSData?
     let start: Float?
     let duration:Float?
     let caption: String?
     let font: UIFont?
-    
+    let gifUrl : URL?
+    let gifImage: UIImage?
+    let gifData: NSData?
+    let gifUrlWithCaption: URL?
+    let gifImageWithCaption: UIImage?
+    let gifDataWithCaption: NSData?
+   
     // New gif from video url
     init(videoURL: URL, start: Float?, duration: Float?, caption: String?, font: UIFont?) {
         let regift : Regift;
@@ -50,9 +52,11 @@ public class Gif {
                             loopCount: loopCount)
         }
         
-        self.gifUrl = regift.createGif()
-        
         self.videoURL = videoURL
+        self.caption = caption
+        self.font = font
+        
+        self.gifUrl = regift.createGif()
         if let gifUrl = self.gifUrl {
         self.gifImage = UIImage.gif(url: gifUrl.absoluteString)
             // Add caption
@@ -63,8 +67,21 @@ public class Gif {
         }
        
         
-        self.caption = caption
-        self.font = font
+        // If there is caption we are going to create aditional gif
+        if let caption = caption {
+            self.gifUrlWithCaption = regift.createGif(caption, font: font)
+            guard let gifUrlWithCaption = self.gifUrlWithCaption else {
+                gifImageWithCaption = nil
+                gifDataWithCaption = nil
+                return }
+            self.gifImageWithCaption = UIImage.gif(url: gifUrlWithCaption.absoluteString)
+            self.gifDataWithCaption = NSData(contentsOf: gifUrlWithCaption)
+            
+        } else {
+            gifUrlWithCaption = nil
+            gifImageWithCaption = nil
+            gifDataWithCaption = nil
+       }
        
     }
     

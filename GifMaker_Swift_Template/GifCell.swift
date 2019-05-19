@@ -13,6 +13,6 @@ class GifCell: UICollectionViewCell {
     @IBOutlet weak var gifImageView: UIImageView!
     
     func configureForGif(gif: Gif) {
-        gifImageView.image = gif.gifImage
+        gifImageView.image = gif.gifImageWithCaption ?? gif.gifImage
     }
 }
