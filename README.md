@@ -10,6 +10,9 @@ GifMaker is an app that lets users create simple GIF animations from their iOS d
 
 ## In progress
 
+#### Persists Gifs
+
+
 #### Add Gif to Saved Gifs
 
 - [x] Add Caption improved

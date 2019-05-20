@@ -15,7 +15,7 @@ let frameCount = 16
 let delayTime: Float = 0.2
 let loopCount = 0 // 0 means loop forever
 
-public class Gif {
+public class Gif : NSObject, NSCoding{
     
     let videoURL: URL?
     let start: Float?
@@ -95,7 +95,33 @@ public class Gif {
         self.init(videoURL: oldGif.videoURL!, start: oldGif.start, duration: oldGif.duration, caption: caption, font: font)
     }
     
+    public required init?(coder aDecoder: NSCoder) {
+        // Unarchive the data, one property at a time
+        self.videoURL = aDecoder.decodeObject(forKey: "videoURL") as? URL
+        self.start = aDecoder.decodeObject(forKey: "start") as? Float
+        self.duration = aDecoder.decodeObject(forKey: "duration") as? Float
+        self.caption = aDecoder.decodeObject(forKey: "caption") as? String
+        self.font = aDecoder.decodeObject(forKey: "font") as? UIFont
+        self.gifUrl = aDecoder.decodeObject(forKey: "gifUrl") as? URL
+        self.gifImage = aDecoder.decodeObject(forKey: "gifImage") as? UIImage
+        self.gifData = aDecoder.decodeObject(forKey:  "gifData") as? NSData
+        self.gifUrlWithCaption = aDecoder.decodeObject(forKey: "gifUrlWithCaption") as? URL
+        self.gifImageWithCaption = aDecoder.decodeObject(forKey: "gifImageWithCaption") as? UIImage
+        self.gifDataWithCaption  = aDecoder.decodeObject(forKey: "gifDataWithCaption") as? NSData
+        
+    }
     
-    // We can add caption to image but if we want to share a gif we need to put all together
- 
+    public func encode(with aCoder: NSCoder) {
+        aCoder.encode(self.videoURL , forKey: "videoURL")
+        aCoder.encode(self.start , forKey: "start")
+        aCoder.encode(self.duration , forKey: "duration")
+        aCoder.encode(self.caption , forKey: "caption")
+        aCoder.encode(self.font , forKey: "font")
+        aCoder.encode(self.gifUrl , forKey: "gifUrl")
+        aCoder.encode(self.gifImage , forKey: "gifImage")
+        aCoder.encode(self.gifData , forKey: "gifData")
+        aCoder.encode(self.gifUrlWithCaption , forKey: "gifUrlWithCaption")
+        aCoder.encode(self.gifImageWithCaption , forKey: "gifImageWithCaption")
+        aCoder.encode(self.gifDataWithCaption , forKey: "gifDataWithCaption")
+    }
 }

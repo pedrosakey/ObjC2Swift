@@ -13,6 +13,13 @@ UICollectionViewDelegateFlowLayout, PreviewViewControllerDelegate {
     
     var savedGifs : [Gif] = []
     let cellMargin: CGFloat = 12.0
+    
+    var gifsFilePath: URL {
+        let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
+        return paths[0].appendingPathComponent("/savedGifs")
+    }
+    
+    
     @IBOutlet weak var emptyView: UIStackView!
     @IBOutlet weak var collectioView: UICollectionView!
     
@@ -25,7 +32,15 @@ UICollectionViewDelegateFlowLayout, PreviewViewControllerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        // Read save data
+        do {
+            if let loadedGifs = try NSKeyedUnarchiver.unarchiveTopLevelObjectWithData(Data(contentsOf: gifsFilePath)){
+                savedGifs = loadedGifs as! [Gif]
+            }
+        } catch {
+            print("Couldn't read file.")
+        }
     }
     
     // MARK: - CollectionView Delegate and Datasource Methods
@@ -56,6 +71,12 @@ UICollectionViewDelegateFlowLayout, PreviewViewControllerDelegate {
     func addToCollection(gif: Gif?) {
         if let gif = gif {
             savedGifs.append(gif)
+            do {
+                let data = try NSKeyedArchiver.archivedData(withRootObject: savedGifs, requiringSecureCoding: false)
+                try data.write(to: gifsFilePath)
+            } catch {
+                print("Couldn't write file")
+            }
         }
     }
 
