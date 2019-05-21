@@ -56,6 +56,20 @@ UICollectionViewDelegateFlowLayout, PreviewViewControllerDelegate {
         return cell
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+       // Gif Selected
+        
+        let gif = savedGifs [indexPath.item]
+        
+        // DetailViewController Reference
+        let detailVC = storyboard?.instantiateViewController(withIdentifier: "DetailViewController") as! DetailViewController
+        
+        
+        // Gif to GifPreviewVC
+        detailVC.gif = gif
+        navigationController?.pushViewController(detailVC, animated: true)
+    }
+    
     // MARK: - CollectionViewFlowLayout
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let width = (collectionView.frame.size.width - (cellMargin * 2.0))/2.0
