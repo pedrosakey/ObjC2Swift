@@ -24,4 +24,17 @@ class DetailViewController: UIViewController {
         navigationController?.popViewController(animated: true)
     }
     
+    
+    @IBAction func shareGif(_ sender: UIButton) {
+        var itemsToShare = [NSData]()
+        itemsToShare.append((self.gif?.gifData)!)
+        
+        let activityVC = UIActivityViewController(activityItems: itemsToShare, applicationActivities: nil)
+        activityVC.completionWithItemsHandler = {(activity, completed, items, error) in
+            if (completed) {
+                self.dismiss(animated: true, completion: nil)
+            }
+        }
+        present(activityVC, animated: true, completion: nil)
+    }
 }
