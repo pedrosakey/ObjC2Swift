@@ -32,6 +32,8 @@ UICollectionViewDelegateFlowLayout, PreviewViewControllerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        showWelcome()
         
         // Read save data
         do {
@@ -40,6 +42,14 @@ UICollectionViewDelegateFlowLayout, PreviewViewControllerDelegate {
             }
         } catch {
             print("Couldn't read file.")
+        }
+    }
+    
+    func showWelcome () {
+        if !UserDefaults.standard.bool(forKey: "WelcomeViewSeen") {
+            // Reference
+            let welcomeVC = storyboard?.instantiateViewController(withIdentifier: "WelcomeViewController") as! WelcomeViewController
+            navigationController?.pushViewController(welcomeVC, animated: true)
         }
     }
     
