@@ -27,7 +27,7 @@ class DetailViewController: UIViewController {
     
     @IBAction func shareGif(_ sender: UIButton) {
         var itemsToShare = [NSData]()
-        itemsToShare.append((self.gif?.gifData)!)
+        itemsToShare.append((self.gif?.gifDataWithCaption)!)
         
         let activityVC = UIActivityViewController(activityItems: itemsToShare, applicationActivities: nil)
         activityVC.completionWithItemsHandler = {(activity, completed, items, error) in
