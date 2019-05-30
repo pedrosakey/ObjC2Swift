@@ -108,11 +108,11 @@
 		EDFAA8EB1CDA99A500D2CB08 /* GifMaker_Swift_Template */ = {
 			isa = PBXGroup;
 			children = (
+				EDFAA8EC1CDA99A500D2CB08 /* AppDelegate.swift */,
 				CFCC65F7226F430C00790E83 /* GifEditorViewController.swift */,
 				CFCC65F4226F430C00790E83 /* GifPreviewViewController.swift */,
 				CFCC65F5226F430C00790E83 /* UIViewController+Record.swift */,
 				CFCC65F6226F430C00790E83 /* WelcomeViewController.swift */,
-				EDFAA8EC1CDA99A500D2CB08 /* AppDelegate.swift */,
 				CF3911ED226A3C1100B5EFA2 /* UIImage+Gif.swift */,
 				CF1C8492228D7D3E00836183 /* SavedGifsViewController.swift */,
 				CF08E9CF22942DB300946F82 /* DetailViewController.swift */,
