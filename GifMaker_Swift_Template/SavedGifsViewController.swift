@@ -27,6 +27,7 @@ UICollectionViewDelegateFlowLayout, PreviewViewControllerDelegate {
         super.viewWillAppear(animated)
         
        emptyView.isHidden = (savedGifs.count != 0)
+//       navigationController?.setNavigationBarHidden(true, animated: true)
        collectioView.reloadData()
     }
     
@@ -50,6 +51,7 @@ UICollectionViewDelegateFlowLayout, PreviewViewControllerDelegate {
             // Reference
             let welcomeVC = storyboard?.instantiateViewController(withIdentifier: "WelcomeViewController") as! WelcomeViewController
             navigationController?.pushViewController(welcomeVC, animated: true)
+            
         }
     }
     

@@ -102,7 +102,7 @@
                                 </constraints>
                                 <state key="normal" image="createButton"/>
                                 <connections>
-                                    <action selector="presentVideoOptionsWithSender:" destination="upq-jB-3dI" eventType="touchUpInside" id="KPg-7x-gkG"/>
+                                    <action selector="presentVideoOptions" destination="upq-jB-3dI" eventType="touchUpInside" id="2zX-He-28v"/>
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="rBY-mr-O59" userLabel="Empty View">
@@ -417,7 +417,8 @@
                                 </constraints>
                                 <state key="normal" title="Button" image="createButton"/>
                                 <connections>
-                                    <action selector="presentVideoOptionsWithSender:" destination="aXC-Xw-CZL" eventType="touchUpInside" id="ZgZ-dL-FQY"/>
+                                    <action selector="presentOptions:" destination="aXC-Xw-CZL" eventType="touchUpInside" id="sSZ-1t-Fxb"/>
+                                    <action selector="presentVideoOptions" destination="aXC-Xw-CZL" eventType="touchUpInside" id="5Hy-Xv-Glz"/>
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mvh-6r-tbq">

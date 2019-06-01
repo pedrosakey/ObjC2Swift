@@ -20,4 +20,7 @@ class WelcomeViewController: UIViewController {
         UserDefaults.standard.set(true, forKey: "WelcomeViewSeen")
     }
     
+    @IBAction func presentOptions(_ sender: Any) {
+        presentVideoOptions()
+    }
 }

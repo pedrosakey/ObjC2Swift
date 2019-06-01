@@ -15,7 +15,7 @@ import AVKit
 
 extension UIViewController {
     
-    @IBAction func presentVideoOptions(sender: AnyObject) {
+    @IBAction func presentVideoOptions() {
         // If I don't have access to camera
         
         // Else
@@ -212,10 +212,16 @@ extension UIViewController: UIImagePickerControllerDelegate {
     
     func displayGIF(gif: Gif) {
         let gifEditorVC = storyboard?.instantiateViewController(withIdentifier: "GifEditorViewController") as! GifEditorViewController
-
         gifEditorVC.gif = gif
-        gifEditorVC.context = self as? SavedGifsViewController
         
+        if let numberOfNavigationsController = navigationController?.viewControllers.capacity  {
+            if numberOfNavigationsController > 1 {
+                gifEditorVC.context = navigationController?.viewControllers[0] as! SavedGifsViewController
+            } else {
+                gifEditorVC.context = self as! SavedGifsViewController
+            }
+            
+        }
         navigationController?.pushViewController(gifEditorVC, animated: true)
     }
 }
