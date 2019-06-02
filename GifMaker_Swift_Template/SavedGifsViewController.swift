@@ -27,7 +27,9 @@ UICollectionViewDelegateFlowLayout, PreviewViewControllerDelegate {
         super.viewWillAppear(animated)
         
        emptyView.isHidden = (savedGifs.count != 0)
-//       navigationController?.setNavigationBarHidden(true, animated: true)
+        if (!emptyView.isHidden) {
+       navigationController?.setNavigationBarHidden(true, animated: true)
+    }
        collectioView.reloadData()
     }
     

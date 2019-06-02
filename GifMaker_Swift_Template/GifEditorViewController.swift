@@ -23,7 +23,8 @@ class GifEditorViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-            gifImageView.image = gif?.gifImage
+        navigationController?.setNavigationBarHidden(false, animated: true)
+        gifImageView.image = gif?.gifImage
     }
 
     override func viewDidLoad() {
