@@ -25,7 +25,7 @@ UICollectionViewDelegateFlowLayout, PreviewViewControllerDelegate {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
+       navigationController?.navigationBar.isHidden = false
        emptyView.isHidden = (savedGifs.count != 0)
         if (!emptyView.isHidden) {
        navigationController?.setNavigationBarHidden(true, animated: true)
