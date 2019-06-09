@@ -29,6 +29,8 @@ class GifEditorViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationItem.backBarButtonItem?.title = " "
+
     }
     
     

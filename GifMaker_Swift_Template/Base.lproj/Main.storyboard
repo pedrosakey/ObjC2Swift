@@ -211,7 +211,8 @@
                             <constraint firstItem="Idg-S9-dYE" firstAttribute="top" secondItem="SRd-cZ-f0f" secondAttribute="bottom" constant="13" id="zw6-c0-KUQ"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Title" id="98w-hN-q9u">
+                    <navigationItem key="navigationItem" id="98w-hN-q9u">
+                        <barButtonItem key="leftBarButtonItem" title=" " image="chevron-left" id="zxf-pm-0WS"/>
                         <barButtonItem key="rightBarButtonItem" title="Next" id="kvy-5V-EgW">
                             <color key="tintColor" red="1" green="0.25490196079999999" blue="0.43921568630000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
@@ -308,7 +309,9 @@
                             <constraint firstItem="HQu-c2-zTO" firstAttribute="trailing" secondItem="Alv-iW-6pc" secondAttribute="trailingMargin" id="zRI-vt-qbN"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Preview" id="SWX-N6-oaS"/>
+                    <navigationItem key="navigationItem" id="SWX-N6-oaS">
+                        <barButtonItem key="leftBarButtonItem" image="chevron-left" id="oWl-e4-rj0"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="gifImageView" destination="HQu-c2-zTO" id="aQ8-Rc-HFb"/>
                         <outlet property="newCaption" destination="5TV-gn-8FI" id="rnn-Lq-DcV"/>
@@ -565,6 +568,7 @@
     </scenes>
     <resources>
         <image name="Close" width="22" height="22"/>
+        <image name="chevron-left" width="10" height="18"/>
         <image name="createButton" width="60" height="60"/>
         <image name="graphicCollectionEmpty" width="72" height="73"/>
     </resources>
