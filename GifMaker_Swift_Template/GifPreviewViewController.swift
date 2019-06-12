@@ -30,6 +30,10 @@ class GifPreviewViewController: UIViewController {
         newCaption.text = gif?.caption
         
         navigationItem.backBarButtonItem?.title = " "
+        
+        //color to background the same as the view
+        navigationController?.navigationBar.barTintColor = view.backgroundColor
+
     }
     // MARK: - IBActions
     @IBAction func createAndSave() {

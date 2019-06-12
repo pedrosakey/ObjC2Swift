@@ -30,6 +30,8 @@ class GifEditorViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.backBarButtonItem?.title = " "
+        //color to background the same as the view
+        navigationController?.navigationBar.barTintColor = view.backgroundColor
 
     }
     
