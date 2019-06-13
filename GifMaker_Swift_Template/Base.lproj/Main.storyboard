@@ -212,7 +212,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="98w-hN-q9u">
-                        <barButtonItem key="leftBarButtonItem" title=" " image="chevron-left" id="zxf-pm-0WS"/>
+                        <barButtonItem key="leftBarButtonItem" title=" " image="chevron-left" id="zxf-pm-0WS">
+                            <connections>
+                                <action selector="customBack:" destination="gN0-HT-VRx" id="Xk1-vn-Nkv"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Next" id="kvy-5V-EgW">
                             <color key="tintColor" red="1" green="0.25490196079999999" blue="0.43921568630000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
@@ -223,6 +227,7 @@
                     <connections>
                         <outlet property="captionTextField" destination="Hx5-Iw-gBr" id="pbh-az-bb1"/>
                         <outlet property="gifImageView" destination="Idg-S9-dYE" id="lxp-61-IaJ"/>
+                        <segue destination="cB7-Y1-ZFX" kind="show" id="OQO-eC-gcX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XSQ-pK-rKN" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -242,7 +247,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="HQu-c2-zTO">
-                                <rect key="frame" x="20" y="64" width="374" height="374"/>
+                                <rect key="frame" x="20" y="108" width="374" height="374"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="HQu-c2-zTO" secondAttribute="height" multiplier="1:1" id="K5r-87-DUU"/>
                                 </constraints>
@@ -284,7 +289,7 @@
                                 </subviews>
                             </stackView>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5TV-gn-8FI">
-                                <rect key="frame" x="0.0" y="388" width="414" height="50"/>
+                                <rect key="frame" x="0.0" y="432" width="414" height="50"/>
                                 <accessibility key="accessibilityConfiguration">
                                     <accessibilityTraits key="traits" notEnabled="YES"/>
                                 </accessibility>
@@ -310,7 +315,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="SWX-N6-oaS">
-                        <barButtonItem key="leftBarButtonItem" image="chevron-left" id="oWl-e4-rj0"/>
+                        <barButtonItem key="leftBarButtonItem" image="chevron-left" id="oWl-e4-rj0">
+                            <connections>
+                                <action selector="customBackButtom:" destination="cB7-Y1-ZFX" id="bch-NU-EF7"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="gifImageView" destination="HQu-c2-zTO" id="aQ8-Rc-HFb"/>

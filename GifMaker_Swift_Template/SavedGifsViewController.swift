@@ -25,6 +25,10 @@ UICollectionViewDelegateFlowLayout, PreviewViewControllerDelegate {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
+        //color to background the same as the view
+        navigationController?.navigationBar.barTintColor = view.backgroundColor
+        
        navigationController?.navigationBar.isHidden = false
        emptyView.isHidden = (savedGifs.count != 0)
         if (!emptyView.isHidden) {

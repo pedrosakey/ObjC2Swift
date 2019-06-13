@@ -22,6 +22,9 @@ class GifPreviewViewController: UIViewController {
     @IBOutlet weak var newCaption: UITextField!
     
     
+    @IBAction func customBackButtom(_ sender: UIBarButtonItem) {
+        navigationController?.popViewController(animated: true)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()

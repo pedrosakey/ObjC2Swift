@@ -21,6 +21,10 @@ class GifEditorViewController: UIViewController {
         self.presentPreview(sender: nil)
     }
     
+    @IBAction func customBack(_ sender: Any) {
+        navigationController?.popViewController(animated: true)
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(false, animated: true)
