@@ -22,7 +22,7 @@ class DetailViewController: UIViewController {
         // Buttom Set up
         shareGifButton.layer.cornerRadius = 5
         shareGifButton.layer.borderWidth = 1
-        shareGifButton.layer.borderColor = UIColor.magenta.cgColor
+        shareGifButton.layer.borderColor = UIColor(hex: "#FF4170FF")?.cgColor
         
         // Hide Nav Bar
         navigationController?.navigationBar.isHidden = true

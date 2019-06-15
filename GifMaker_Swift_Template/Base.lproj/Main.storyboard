@@ -213,6 +213,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="98w-hN-q9u">
                         <barButtonItem key="leftBarButtonItem" title=" " image="chevron-left" id="zxf-pm-0WS">
+                            <color key="tintColor" red="1" green="0.25490196079999999" blue="0.43921568630000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <action selector="customBack:" destination="gN0-HT-VRx" id="Xk1-vn-Nkv"/>
                             </connections>
@@ -316,6 +317,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="SWX-N6-oaS">
                         <barButtonItem key="leftBarButtonItem" image="chevron-left" id="oWl-e4-rj0">
+                            <color key="tintColor" red="1" green="0.25490196079999999" blue="0.43921568630000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <action selector="customBackButtom:" destination="cB7-Y1-ZFX" id="bch-NU-EF7"/>
                             </connections>
@@ -376,6 +378,7 @@
                                     <constraint firstAttribute="height" constant="44" id="Zmd-iu-Xhf"/>
                                     <constraint firstAttribute="width" constant="44" id="aAD-pY-dof"/>
                                 </constraints>
+                                <color key="tintColor" red="1" green="0.25490196079999999" blue="0.43921568630000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" image="Close"/>
                                 <connections>
                                     <action selector="dismissViewController" destination="Ilf-GF-t1a" eventType="touchUpInside" id="XF0-Rj-MGx"/>

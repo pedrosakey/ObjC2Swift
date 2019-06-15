@@ -14,6 +14,7 @@
 		CF1C8493228D7D3E00836183 /* SavedGifsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF1C8492228D7D3E00836183 /* SavedGifsViewController.swift */; };
 		CF1C8495228D87C200836183 /* GifCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF1C8494228D87C200836183 /* GifCell.swift */; };
 		CF3911EE226A3C1100B5EFA2 /* UIImage+Gif.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF3911ED226A3C1100B5EFA2 /* UIImage+Gif.swift */; };
+		CFA8507222B52FBF00313D97 /* UIColor+hexInit.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA8507122B52FBF00313D97 /* UIColor+hexInit.swift */; };
 		CFCC65F8226F430C00790E83 /* GifPreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFCC65F4226F430C00790E83 /* GifPreviewViewController.swift */; };
 		CFCC65F9226F430C00790E83 /* UIViewController+Record.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFCC65F5226F430C00790E83 /* UIViewController+Record.swift */; };
 		CFCC65FA226F430C00790E83 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFCC65F6226F430C00790E83 /* WelcomeViewController.swift */; };
@@ -35,6 +36,7 @@
 		CF1C8492228D7D3E00836183 /* SavedGifsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedGifsViewController.swift; sourceTree = "<group>"; };
 		CF1C8494228D87C200836183 /* GifCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GifCell.swift; sourceTree = "<group>"; };
 		CF3911ED226A3C1100B5EFA2 /* UIImage+Gif.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Gif.swift"; sourceTree = "<group>"; };
+		CFA8507122B52FBF00313D97 /* UIColor+hexInit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+hexInit.swift"; sourceTree = "<group>"; };
 		CFCC65F4226F430C00790E83 /* GifPreviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GifPreviewViewController.swift; sourceTree = "<group>"; };
 		CFCC65F5226F430C00790E83 /* UIViewController+Record.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Record.swift"; sourceTree = "<group>"; };
 		CFCC65F6226F430C00790E83 /* WelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
@@ -117,6 +119,7 @@
 				CF1C8492228D7D3E00836183 /* SavedGifsViewController.swift */,
 				CF08E9CF22942DB300946F82 /* DetailViewController.swift */,
 				CF1C8494228D87C200836183 /* GifCell.swift */,
+				CFA8507122B52FBF00313D97 /* UIColor+hexInit.swift */,
 				CF041B14226B9C860025239C /* Model */,
 				A94CC3D71D21C85A00DC758E /* Assets */,
 				A94CC3D61D21C84C00DC758E /* Supporting Files */,
@@ -211,6 +214,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CF08E9D022942DB300946F82 /* DetailViewController.swift in Sources */,
+				CFA8507222B52FBF00313D97 /* UIColor+hexInit.swift in Sources */,
 				CFCC65FA226F430C00790E83 /* WelcomeViewController.swift in Sources */,
 				CF1C8493228D7D3E00836183 /* SavedGifsViewController.swift in Sources */,
 				CF1C8495228D87C200836183 /* GifCell.swift in Sources */,
