@@ -16,7 +16,7 @@ class WelcomeViewController: UIViewController {
         
         
         super.viewWillAppear(animated)
-        navigationController?.setNavigationBarHidden(false, animated: true)
+        navigationController?.setNavigationBarHidden(true, animated: true)
         let proofOfConceptGif = UIImage.gif(name: "hotlineBling")
         gifImageView.image = proofOfConceptGif
         

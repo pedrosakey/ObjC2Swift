@@ -26,15 +26,13 @@ UICollectionViewDelegateFlowLayout, PreviewViewControllerDelegate {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        //color to background the same as the view
-        navigationController?.navigationBar.barTintColor = view.backgroundColor
-        
+       navigationController?.navigationBar.barTintColor = view.backgroundColor
        navigationController?.navigationBar.isHidden = false
        emptyView.isHidden = (savedGifs.count != 0)
         if (!emptyView.isHidden) {
        navigationController?.setNavigationBarHidden(true, animated: true)
     }
-       collectioView.reloadData()
+        
     }
     
     override func viewDidLoad() {
@@ -64,7 +62,6 @@ UICollectionViewDelegateFlowLayout, PreviewViewControllerDelegate {
     // MARK: - CollectionView Delegate and Datasource Methods
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return savedGifs.count
-       // return 12
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
