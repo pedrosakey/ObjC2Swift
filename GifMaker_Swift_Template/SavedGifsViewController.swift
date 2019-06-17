@@ -37,6 +37,9 @@ UICollectionViewDelegateFlowLayout, PreviewViewControllerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let textAttributes = [NSAttributedString.Key.foregroundColor:UIColor(hex: "#FF4170FF")]
+        navigationController?.navigationBar.titleTextAttributes = textAttributes as [NSAttributedString.Key : Any]
 
         showWelcome()
         
