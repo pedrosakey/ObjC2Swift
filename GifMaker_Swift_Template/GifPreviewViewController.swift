@@ -31,6 +31,7 @@ class GifPreviewViewController: UIViewController {
         // Disable interaction in Storyboard...
         gifImageView.image = gif?.gifImage
         newCaption.text = gif?.caption
+        newCaption.isUserInteractionEnabled = false
         
         navigationItem.backBarButtonItem?.title = " "
         
