@@ -39,6 +39,15 @@ class GifPreviewViewController: UIViewController {
         navigationController?.navigationBar.barTintColor = view.backgroundColor
 
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        // If edition Mode
+        
+        // Enable text
+        
+        // Enable Save and cancel
+    }
+    
     // MARK: - IBActions
     @IBAction func createAndSave() {
         // Create new Gif with caption
@@ -67,6 +76,10 @@ class GifPreviewViewController: UIViewController {
         
         // Present
         navigationController?.present(activityVC, animated: true, completion: nil)
+        
+    }
+    
+    func saveEditedGif () {
         
     }
     

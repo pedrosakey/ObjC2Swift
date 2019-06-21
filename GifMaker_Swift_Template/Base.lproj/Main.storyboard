@@ -346,6 +346,23 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SFJ-fw-e1B">
+                                <rect key="frame" x="20" y="734" width="374" height="50"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
+                                <state key="normal" title="EDIT GIF">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="layer.borderWidth" value="1"/>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="layer.borderColor">
+                                        <color key="value" red="1" green="0.40000000600000002" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.maskToBounds" value="NO"/>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="shareGif:" destination="Ilf-GF-t1a" eventType="touchUpInside" id="W5Z-u2-Zqn"/>
+                                </connections>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tie-bE-ygI">
                                 <rect key="frame" x="20" y="792" width="374" height="50"/>
                                 <constraints>
@@ -391,10 +408,14 @@
                             <constraint firstItem="fMj-xi-5Fm" firstAttribute="centerX" secondItem="98u-Ei-l0c" secondAttribute="centerX" id="1nT-PV-jGp"/>
                             <constraint firstItem="qvD-Hf-gP0" firstAttribute="top" secondItem="141-ek-2z6" secondAttribute="bottom" constant="-2" id="6Pv-km-Uga"/>
                             <constraint firstItem="qvD-Hf-gP0" firstAttribute="trailing" secondItem="98u-Ei-l0c" secondAttribute="trailingMargin" constant="11" id="CcA-Ms-Y4k"/>
+                            <constraint firstItem="SFJ-fw-e1B" firstAttribute="height" secondItem="tie-bE-ygI" secondAttribute="height" id="Hlb-ow-pea"/>
                             <constraint firstItem="tie-bE-ygI" firstAttribute="leading" secondItem="98u-Ei-l0c" secondAttribute="leadingMargin" id="SSN-yS-Ja1"/>
                             <constraint firstItem="tie-bE-ygI" firstAttribute="trailing" secondItem="98u-Ei-l0c" secondAttribute="trailingMargin" id="YsK-Gn-Xxo"/>
+                            <constraint firstItem="tie-bE-ygI" firstAttribute="top" secondItem="SFJ-fw-e1B" secondAttribute="bottom" constant="8" id="bF1-Jb-AJr"/>
+                            <constraint firstItem="SFJ-fw-e1B" firstAttribute="trailing" secondItem="98u-Ei-l0c" secondAttribute="trailingMargin" id="qat-wB-fK0"/>
                             <constraint firstItem="fMj-xi-5Fm" firstAttribute="trailing" secondItem="98u-Ei-l0c" secondAttribute="trailingMargin" id="wH4-Qz-1Xt"/>
                             <constraint firstItem="fMj-xi-5Fm" firstAttribute="leading" secondItem="98u-Ei-l0c" secondAttribute="leadingMargin" id="wHQ-EP-jcX"/>
+                            <constraint firstItem="SFJ-fw-e1B" firstAttribute="leading" secondItem="98u-Ei-l0c" secondAttribute="leadingMargin" id="zJ5-dp-qbO"/>
                             <constraint firstItem="8DJ-Ka-ETF" firstAttribute="top" secondItem="tie-bE-ygI" secondAttribute="bottom" constant="20" id="zYz-Sa-xDb"/>
                         </constraints>
                     </view>
