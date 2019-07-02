@@ -14,6 +14,7 @@ UICollectionViewDelegateFlowLayout, PreviewViewControllerDelegate {
     var savedGifs : [Gif] = []
     let cellMargin: CGFloat = 12.0
     
+    
     var gifsFilePath: URL {
         let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
         return paths[0].appendingPathComponent("/savedGifs")
@@ -23,24 +24,12 @@ UICollectionViewDelegateFlowLayout, PreviewViewControllerDelegate {
     @IBOutlet weak var emptyView: UIStackView!
     @IBOutlet weak var collectioView: UICollectionView!
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-       navigationController?.navigationBar.barTintColor = view.backgroundColor
-       navigationController?.navigationBar.isHidden = false
-       emptyView.isHidden = (savedGifs.count != 0)
-        if (!emptyView.isHidden) {
-       navigationController?.setNavigationBarHidden(true, animated: true)
-    }
-        
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         let textAttributes = [NSAttributedString.Key.foregroundColor:UIColor(hex: "#FF4170FF")]
         navigationController?.navigationBar.titleTextAttributes = textAttributes as [NSAttributedString.Key : Any]
-
+        
         showWelcome()
         
         // Read save data
@@ -52,6 +41,18 @@ UICollectionViewDelegateFlowLayout, PreviewViewControllerDelegate {
             print("Couldn't read file.")
         }
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+       navigationController?.navigationBar.barTintColor = view.backgroundColor
+       navigationController?.navigationBar.isHidden = false
+       emptyView.isHidden = (savedGifs.count != 0)
+        if (!emptyView.isHidden) {
+            navigationController?.setNavigationBarHidden(true, animated: true)
+        }
+    }
+    
     
     func showWelcome () {
         if !UserDefaults.standard.bool(forKey: "WelcomeViewSeen") {
@@ -103,6 +104,9 @@ UICollectionViewDelegateFlowLayout, PreviewViewControllerDelegate {
     func addToCollection(gif: Gif?) {
         if let gif = gif {
             savedGifs.append(gif)
+            let indexPath = IndexPath(row: savedGifs.count - 1, section: 0)
+            collectioView.insertItems(at: [indexPath])
+            
             do {
                 let data = try NSKeyedArchiver.archivedData(withRootObject: savedGifs, requiringSecureCoding: false)
                 try data.write(to: gifsFilePath)
