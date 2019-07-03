@@ -9,7 +9,7 @@
 import UIKit
 
 class SavedGifsViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate,
-UICollectionViewDelegateFlowLayout, PreviewViewControllerDelegate {
+UICollectionViewDelegateFlowLayout {
     
     var savedGifs : [Gif] = []
     let cellMargin: CGFloat = 12.0
@@ -86,21 +86,25 @@ UICollectionViewDelegateFlowLayout, PreviewViewControllerDelegate {
         
         // Gif to GifPreviewVC
         detailVC.gif = gif
+        detailVC.delegate = self
         navigationController?.pushViewController(detailVC, animated: true)
     }
     
-    // MARK: - CollectionViewFlowLayout
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let width = (collectionView.frame.size.width - (cellMargin * 2.0))/2.0
         return CGSize(width: width, height: width)
     }
     
+    
     // MARK: - Unwind Segues
     @IBAction func unwindToSavedGifsViewController(segue:UIStoryboardSegue) {
         
     }
-    
-    // MARK: - Preview Delegate
+
+}
+
+// MARK: - Preview Delegate
+extension SavedGifsViewController: PreviewViewControllerDelegate {
     func addToCollection(gif: Gif?) {
         if let gif = gif {
             savedGifs.append(gif)
@@ -115,5 +119,16 @@ UICollectionViewDelegateFlowLayout, PreviewViewControllerDelegate {
             }
         }
     }
+}
 
+extension SavedGifsViewController: DetailViewControllerDelegate {
+    func delete(gif: Gif?) {
+        //Find indexpath
+        guard let index = savedGifs.firstIndex(where: { $0 == gif })
+            else { return }
+        //Update model
+        savedGifs.remove(at: index)
+        //Delete row
+        collectioView.deleteItems(at: [IndexPath(item: index, section: 0 )])
+    }
 }

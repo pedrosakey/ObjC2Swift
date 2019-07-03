@@ -41,11 +41,6 @@ class GifPreviewViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        // If edition Mode
-        
-        // Enable text
-        
-        // Enable Save and cancel
     }
     
     // MARK: - IBActions

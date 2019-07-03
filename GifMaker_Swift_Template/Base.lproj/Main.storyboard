@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="lhj-YI-9dd">
-    <device id="retina6_1" orientation="portrait">
+    <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -14,7 +14,7 @@
             <objects>
                 <navigationController storyboardIdentifier="CollectionNav" id="wK0-AV-yDw" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="hqo-Bs-xuq">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" red="1" green="0.20000000000000001" blue="0.40000000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </navigationBar>
@@ -35,11 +35,11 @@
                         <viewControllerLayoutGuide type="bottom" id="zVw-uv-suS"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="lpB-Vr-Vzf">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="hbv-Kk-KXX">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="862"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="8" minimumInteritemSpacing="8" id="tRH-3Q-oq2">
                                     <size key="itemSize" width="0.0" height="0.0"/>
@@ -49,7 +49,7 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="GifCell" id="2ru-Ed-G6h" customClass="GifCell" customModule="GifMaker_Swift_Template" customModuleProvider="target">
-                                        <rect key="frame" x="8" y="8" width="177" height="177"/>
+                                        <rect key="frame" x="99" y="8" width="177" height="177"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="177" height="177"/>
@@ -95,7 +95,7 @@
                                 </connections>
                             </collectionView>
                             <button opaque="NO" alpha="0.69999999999999996" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dhk-Vz-Mtq">
-                                <rect key="frame" x="177" y="782" width="60" height="60"/>
+                                <rect key="frame" x="157.5" y="587" width="60" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="60" id="F3h-tr-WvV"/>
                                     <constraint firstAttribute="height" constant="60" id="nD5-xT-Xdf"/>
@@ -106,13 +106,13 @@
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="rBY-mr-O59" userLabel="Empty View">
-                                <rect key="frame" x="20" y="376" width="374" height="144"/>
+                                <rect key="frame" x="16" y="261.5" width="343" height="144"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="graphicCollectionEmpty" translatesAutoresizingMaskIntoConstraints="NO" id="IOx-EA-SOI">
-                                        <rect key="frame" x="151" y="0.0" width="72" height="73"/>
+                                        <rect key="frame" x="135.5" y="0.0" width="72" height="73"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Let's create some GIFs!! Get started by tapping the button below" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9gY-ir-reI">
-                                        <rect key="frame" x="35.5" y="103" width="303" height="41"/>
+                                        <rect key="frame" x="20" y="103" width="303" height="41"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="41" id="mjf-NH-Skp"/>
                                             <constraint firstAttribute="width" constant="303" id="yvT-sb-qvt"/>
@@ -182,17 +182,17 @@
                         <viewControllerLayoutGuide type="bottom" id="8Ay-xf-bgi"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="pNa-Y5-au7">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Idg-S9-dYE">
-                                <rect key="frame" x="20" y="101" width="374" height="374"/>
+                                <rect key="frame" x="16" y="77" width="343" height="343"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Idg-S9-dYE" secondAttribute="height" multiplier="1:1" id="VYW-pa-uQv"/>
                                 </constraints>
                             </imageView>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Add Caption" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Hx5-Iw-gBr">
-                                <rect key="frame" x="20" y="413" width="374" height="50"/>
+                                <rect key="frame" x="16" y="358" width="343" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="ZG3-3H-HnY"/>
                                 </constraints>
@@ -244,20 +244,20 @@
                         <viewControllerLayoutGuide type="bottom" id="zEa-bK-uMp"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Alv-iW-6pc">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="HQu-c2-zTO">
-                                <rect key="frame" x="20" y="108" width="374" height="374"/>
+                                <rect key="frame" x="16" y="84" width="343" height="343"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="HQu-c2-zTO" secondAttribute="height" multiplier="1:1" id="K5r-87-DUU"/>
                                 </constraints>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="aqi-WW-nfX">
-                                <rect key="frame" x="20" y="726" width="374" height="116"/>
+                                <rect key="frame" x="16" y="531" width="343" height="116"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lnU-9g-0xe">
-                                        <rect key="frame" x="0.0" y="0.0" width="374" height="50"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="lh1-h6-W5Y"/>
                                         </constraints>
@@ -274,7 +274,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xoi-MZ-GNH">
-                                        <rect key="frame" x="0.0" y="66" width="374" height="50"/>
+                                        <rect key="frame" x="0.0" y="66" width="343" height="50"/>
                                         <color key="backgroundColor" red="1" green="0.25490196078431371" blue="0.4392156862745098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="2fg-hG-msF"/>
@@ -290,7 +290,7 @@
                                 </subviews>
                             </stackView>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5TV-gn-8FI">
-                                <rect key="frame" x="0.0" y="432" width="414" height="50"/>
+                                <rect key="frame" x="0.0" y="377" width="375" height="50"/>
                                 <accessibility key="accessibilityConfiguration">
                                     <accessibilityTraits key="traits" notEnabled="YES"/>
                                 </accessibility>
@@ -343,54 +343,17 @@
                         <viewControllerLayoutGuide type="bottom" id="8DJ-Ka-ETF"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="98u-Ei-l0c">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SFJ-fw-e1B">
-                                <rect key="frame" x="20" y="734" width="374" height="50"/>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
-                                <state key="normal" title="EDIT GIF">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="layer.borderWidth" value="1"/>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="layer.borderColor">
-                                        <color key="value" red="1" green="0.40000000600000002" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.maskToBounds" value="NO"/>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <action selector="shareGif:" destination="Ilf-GF-t1a" eventType="touchUpInside" id="W5Z-u2-Zqn"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tie-bE-ygI">
-                                <rect key="frame" x="20" y="792" width="374" height="50"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="1yF-Ba-fUp"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
-                                <state key="normal" title="SHARE">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="layer.borderWidth" value="1"/>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="layer.borderColor">
-                                        <color key="value" red="1" green="0.40000000600000002" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.maskToBounds" value="NO"/>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <action selector="shareGif:" destination="Ilf-GF-t1a" eventType="touchUpInside" id="pEd-3o-wMJ"/>
-                                </connections>
-                            </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fMj-xi-5Fm">
-                                <rect key="frame" x="20" y="261" width="374" height="374"/>
+                                <rect key="frame" x="16" y="162" width="343" height="343"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="fMj-xi-5Fm" secondAttribute="height" multiplier="1:1" id="cr6-0G-XaR"/>
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qvD-Hf-gP0">
-                                <rect key="frame" x="361" y="42" width="44" height="44"/>
+                                <rect key="frame" x="326" y="18" width="44" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="Zmd-iu-Xhf"/>
                                     <constraint firstAttribute="width" constant="44" id="aAD-pY-dof"/>
@@ -401,6 +364,71 @@
                                     <action selector="dismissViewController" destination="Ilf-GF-t1a" eventType="touchUpInside" id="XF0-Rj-MGx"/>
                                 </connections>
                             </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="lSI-bG-Ma8" userLabel="Buttoms Options">
+                                <rect key="frame" x="16" y="531" width="343" height="136"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f4K-AG-EKH">
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="rHy-2c-wIx"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
+                                        <state key="normal" title="EDIT GIF">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="layer.borderWidth" value="1"/>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="layer.borderColor">
+                                                <color key="value" red="1" green="0.40000000600000002" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="layer.maskToBounds" value="NO"/>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="shareGif:" destination="Ilf-GF-t1a" eventType="touchUpInside" id="PeD-bU-NbS"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SFJ-fw-e1B">
+                                        <rect key="frame" x="0.0" y="48" width="343" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="9Vc-h8-iNC"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
+                                        <state key="normal" title="DELETE GIF">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="layer.borderWidth" value="1"/>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="layer.borderColor">
+                                                <color key="value" red="1" green="0.40000000600000002" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="layer.maskToBounds" value="NO"/>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="deleteGif:" destination="Ilf-GF-t1a" eventType="touchUpInside" id="PHH-9c-Hdx"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tie-bE-ygI">
+                                        <rect key="frame" x="0.0" y="96" width="343" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="29n-I8-zE6"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
+                                        <state key="normal" title="SHARE GIF">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="layer.borderWidth" value="1"/>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="layer.borderColor">
+                                                <color key="value" red="1" green="0.40000000600000002" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="layer.maskToBounds" value="NO"/>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="shareGif:" destination="Ilf-GF-t1a" eventType="touchUpInside" id="pEd-3o-wMJ"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" red="0.18039215689999999" green="0.23921568630000001" blue="0.28235294119999998" alpha="0.89705230496453903" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -408,15 +436,11 @@
                             <constraint firstItem="fMj-xi-5Fm" firstAttribute="centerX" secondItem="98u-Ei-l0c" secondAttribute="centerX" id="1nT-PV-jGp"/>
                             <constraint firstItem="qvD-Hf-gP0" firstAttribute="top" secondItem="141-ek-2z6" secondAttribute="bottom" constant="-2" id="6Pv-km-Uga"/>
                             <constraint firstItem="qvD-Hf-gP0" firstAttribute="trailing" secondItem="98u-Ei-l0c" secondAttribute="trailingMargin" constant="11" id="CcA-Ms-Y4k"/>
-                            <constraint firstItem="SFJ-fw-e1B" firstAttribute="height" secondItem="tie-bE-ygI" secondAttribute="height" id="Hlb-ow-pea"/>
-                            <constraint firstItem="tie-bE-ygI" firstAttribute="leading" secondItem="98u-Ei-l0c" secondAttribute="leadingMargin" id="SSN-yS-Ja1"/>
-                            <constraint firstItem="tie-bE-ygI" firstAttribute="trailing" secondItem="98u-Ei-l0c" secondAttribute="trailingMargin" id="YsK-Gn-Xxo"/>
-                            <constraint firstItem="tie-bE-ygI" firstAttribute="top" secondItem="SFJ-fw-e1B" secondAttribute="bottom" constant="8" id="bF1-Jb-AJr"/>
-                            <constraint firstItem="SFJ-fw-e1B" firstAttribute="trailing" secondItem="98u-Ei-l0c" secondAttribute="trailingMargin" id="qat-wB-fK0"/>
+                            <constraint firstItem="lSI-bG-Ma8" firstAttribute="leading" secondItem="98u-Ei-l0c" secondAttribute="leadingMargin" id="cWR-Lz-gxm"/>
+                            <constraint firstItem="8DJ-Ka-ETF" firstAttribute="top" secondItem="lSI-bG-Ma8" secondAttribute="bottom" id="hl8-E5-eGd"/>
                             <constraint firstItem="fMj-xi-5Fm" firstAttribute="trailing" secondItem="98u-Ei-l0c" secondAttribute="trailingMargin" id="wH4-Qz-1Xt"/>
                             <constraint firstItem="fMj-xi-5Fm" firstAttribute="leading" secondItem="98u-Ei-l0c" secondAttribute="leadingMargin" id="wHQ-EP-jcX"/>
-                            <constraint firstItem="SFJ-fw-e1B" firstAttribute="leading" secondItem="98u-Ei-l0c" secondAttribute="leadingMargin" id="zJ5-dp-qbO"/>
-                            <constraint firstItem="8DJ-Ka-ETF" firstAttribute="top" secondItem="tie-bE-ygI" secondAttribute="bottom" constant="20" id="zYz-Sa-xDb"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="lSI-bG-Ma8" secondAttribute="trailing" id="xYc-de-Vh5"/>
                         </constraints>
                     </view>
                     <connections>
@@ -437,17 +461,17 @@
                         <viewControllerLayoutGuide type="bottom" id="IJD-un-28D"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="uv4-dn-Ugs">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Wun-5B-Ruk">
-                                <rect key="frame" x="20" y="88" width="374" height="374"/>
+                                <rect key="frame" x="16" y="64" width="343" height="343"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Wun-5B-Ruk" secondAttribute="height" multiplier="1:1" id="Tia-mF-cfY"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="WELCOME!!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XxW-AR-iPS">
-                                <rect key="frame" x="20" y="406" width="374" height="44"/>
+                                <rect key="frame" x="16" y="351" width="343" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="ydg-GB-ycP"/>
                                 </constraints>
@@ -458,7 +482,7 @@
                                 <size key="shadowOffset" width="0.0" height="1"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tHz-KD-sx7">
-                                <rect key="frame" x="177" y="782" width="60" height="60"/>
+                                <rect key="frame" x="157.5" y="587" width="60" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="hG8-tD-wew"/>
                                     <constraint firstAttribute="width" constant="60" id="nKa-D8-wqn"/>
@@ -470,13 +494,13 @@
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mvh-6r-tbq">
-                                <rect key="frame" x="20" y="462" width="374" height="320"/>
+                                <rect key="frame" x="16" y="407" width="343" height="180"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="UIK-Hq-gR7">
-                                        <rect key="frame" x="12" y="21" width="350" height="75"/>
+                                        <rect key="frame" x="12" y="21" width="319" height="75"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Welcome to GIFit" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WBs-4n-SXa">
-                                                <rect key="frame" x="95" y="0.0" width="160" height="24"/>
+                                                <rect key="frame" x="79.5" y="0.0" width="160" height="24"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="24" id="Tk7-ap-YRS"/>
                                                     <constraint firstAttribute="width" constant="160" id="XQh-H5-pJs"/>
@@ -498,7 +522,7 @@
                                                 </variation>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Let's create some GIFs!! Get started by tapping the button below" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cYt-Kh-sCA">
-                                                <rect key="frame" x="31.5" y="36" width="287" height="39"/>
+                                                <rect key="frame" x="16" y="36" width="287" height="39"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="287" id="JbZ-cP-AcI"/>
                                                     <constraint firstAttribute="height" constant="39" id="vW8-il-wlU"/>
@@ -586,7 +610,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="lhj-YI-9dd" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="OYb-cZ-US4">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>

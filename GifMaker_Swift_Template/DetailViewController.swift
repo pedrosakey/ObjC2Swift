@@ -8,10 +8,15 @@
 
 import UIKit
 
+protocol DetailViewControllerDelegate {
+    func delete(gif: Gif?)
+}
+
 class DetailViewController: UIViewController {
 
     @IBOutlet weak var gifImageView: UIImageView!
     var gif: Gif?
+    var delegate : DetailViewControllerDelegate?
     
     @IBOutlet weak var shareGifButton: UIButton!
     
@@ -47,4 +52,10 @@ class DetailViewController: UIViewController {
         }
         present(activityVC, animated: true, completion: nil)
     }
+    
+    @IBAction func deleteGif(_ sender: Any) {
+        delegate?.delete(gif: gif)
+        dismissViewController()
+    }
+    
 }
