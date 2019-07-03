@@ -203,7 +203,8 @@ extension UIViewController: UIImagePickerControllerDelegate {
         
         // Background process
         DispatchQueue.main.async() {
-            self.dismiss(animated: true, completion: nil)
+            let navigationsOnStack = self.navigationController?.viewControllers
+            //self.dismiss(animated: true, completion: nil)
             //URL we GIF is stored
             let gif = Gif(videoURL: videoURL, start: start, duration: duration)
             self.displayGIF(gif: gif)
@@ -223,5 +224,8 @@ extension UIViewController: UIImagePickerControllerDelegate {
             
         }
         navigationController?.pushViewController(gifEditorVC, animated: true)
+        
+        // Dismiss photoLibraryController or recordLibraryController
+        self.dismiss(animated: true, completion: nil)
     }
 }
