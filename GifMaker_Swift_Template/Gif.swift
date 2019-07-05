@@ -20,7 +20,7 @@ public class Gif : NSObject, NSCoding{
     let videoURL: URL?
     let start: Float?
     let duration:Float?
-    let caption: String?
+    var caption: String?
     let font: UIFont?
     let gifUrl : URL?
     let gifImage: UIImage?

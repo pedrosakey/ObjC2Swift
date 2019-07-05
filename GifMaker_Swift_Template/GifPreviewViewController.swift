@@ -9,18 +9,21 @@
 import UIKit
 
 protocol PreviewViewControllerDelegate {
-    func addToCollection(gif:Gif?)
+    func previewViewController(add gif:Gif?)
+    func previewViewController(edit gif:Gif?, to gif2:Gif?)
 }
 
 
 class GifPreviewViewController: UIViewController {
     
     var gif: Gif?
-    var context: PreviewViewControllerDelegate?
+    var delegate: PreviewViewControllerDelegate?
 
     @IBOutlet weak var gifImageView: UIImageView!
     @IBOutlet weak var newCaption: UITextField!
     
+    @IBOutlet weak var shareButton: UIButton!
+    @IBOutlet weak var createAndSaveButton: UIButton!
     
     @IBAction func customBackButtom(_ sender: UIBarButtonItem) {
         navigationController?.popViewController(animated: true)
@@ -37,6 +40,11 @@ class GifPreviewViewController: UIViewController {
         
         //color to background the same as the view
         navigationController?.navigationBar.barTintColor = view.backgroundColor
+        
+        if isGifEditingFromDetail() {
+            shareButton.isHidden = true
+            createAndSaveButton.setTitle("Done", for: .normal)
+        }
 
     }
     
@@ -47,8 +55,13 @@ class GifPreviewViewController: UIViewController {
     @IBAction func createAndSave() {
         // Create new Gif with caption
         if let gif = gif {
-        let newGif = Gif(oldGif: gif, caption: newCaption.text, font: newCaption.font)
-        context?.addToCollection(gif: newGif)
+            let newGif = Gif(oldGif: gif, caption: newCaption.text, font: newCaption.font)
+        
+            if isGifCreatedFromWelcomeScreen() {
+               delegate?.previewViewController(add: newGif)
+            } else  {
+                delegate?.previewViewController(edit: gif, to: newGif)
+            }
         }
         performSegue(withIdentifier: "unwindToSavedGifsVC", sender: nil)
     }
@@ -74,8 +87,16 @@ class GifPreviewViewController: UIViewController {
         
     }
     
-    func saveEditedGif () {
+    @objc func saveEditedGif () {
         
+    }
+    
+    func isGifToEdit() -> Bool {
+        if let numberOfNavigationsController = navigationController?.viewControllers.capacity  {
+            return numberOfNavigationsController > 3
+        } else {
+            return false
+        }
     }
     
     func popToRootViewController () {

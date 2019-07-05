@@ -14,8 +14,9 @@ class GifEditorViewController: UIViewController {
     
     @IBOutlet weak var gifImageView: UIImageView!
     @IBOutlet weak var captionTextField: UITextField!
+    
     var gif: Gif?
-    var context: PreviewViewControllerDelegate?
+    var delegate: PreviewViewControllerDelegate?
     
     @IBAction func gifPreview(_ sender: Any) {
         self.presentPreview(sender: nil)
@@ -27,8 +28,11 @@ class GifEditorViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        navigationController?.setNavigationBarHidden(false, animated: true)
+        navigationController?.setNavigationBarHidden(false, animated: false)
+        // Hide Nav Bar
+        navigationController?.navigationBar.isHidden = false
         gifImageView.image = gif?.gifImage
+        captionTextField.text = gif?.caption
     }
 
     override func viewDidLoad() {
@@ -56,12 +60,13 @@ class GifEditorViewController: UIViewController {
         let gifPreviewVC = storyboard?.instantiateViewController(withIdentifier: "GifPreviewViewController") as! GifPreviewViewController
         
         // Recreate the gif with the caption
-         let newGif = Gif(oldGif: self.gif!, caption: captionTextField.text, font: captionTextField.font)
-         self.gif = newGif
+//         let newGif = Gif(oldGif: self.gif!, caption: captionTextField.text, font: captionTextField.font)
+//         self.gif = newGif
+        gif?.caption = captionTextField.text
         
         // Gif to GifPreviewVC
         gifPreviewVC.gif = gif
-        gifPreviewVC.context = context
+        gifPreviewVC.delegate = delegate
         
         navigationController?.pushViewController(gifPreviewVC, animated: true)
         

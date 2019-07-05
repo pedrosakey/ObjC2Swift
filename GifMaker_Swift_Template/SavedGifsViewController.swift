@@ -86,7 +86,7 @@ UICollectionViewDelegateFlowLayout {
         
         // Gif to GifPreviewVC
         detailVC.gif = gif
-        detailVC.delegate = self
+        detailVC.delegate = self 
         navigationController?.pushViewController(detailVC, animated: true)
     }
     
@@ -105,7 +105,7 @@ UICollectionViewDelegateFlowLayout {
 
 // MARK: - Preview Delegate
 extension SavedGifsViewController: PreviewViewControllerDelegate {
-    func addToCollection(gif: Gif?) {
+    func previewViewController(add gif: Gif?) {
         if let gif = gif {
             savedGifs.append(gif)
             let indexPath = IndexPath(row: savedGifs.count - 1, section: 0)
@@ -118,6 +118,23 @@ extension SavedGifsViewController: PreviewViewControllerDelegate {
                 print("Couldn't write file")
             }
         }
+    }
+    
+    func previewViewController(edit gif: Gif?, to gif2:Gif?) {
+        if let gif = gif, let gif2 = gif2 {
+            delete(gif: gif)
+            let indexPath = IndexPath(row: savedGifs.count - 1, section: 0)
+            savedGifs.insert(gif2, at: indexPath.row)
+            collectioView.insertItems(at: [indexPath])
+            
+            do {
+                let data = try NSKeyedArchiver.archivedData(withRootObject: savedGifs, requiringSecureCoding: false)
+                try data.write(to: gifsFilePath)
+            } catch {
+                print("Couldn't write file")
+            }
+        }
+        
     }
 }
 

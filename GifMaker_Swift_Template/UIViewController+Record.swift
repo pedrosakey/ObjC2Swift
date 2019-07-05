@@ -77,6 +77,11 @@ extension UIViewController {
 
 extension UIViewController: UINavigationControllerDelegate {
     
+    func push (viewcontroller vc: UIViewController) {
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    
 }
 
 // MARK: - UIViewController: UIImagePickerControllerDelegate
@@ -203,7 +208,6 @@ extension UIViewController: UIImagePickerControllerDelegate {
         
         // Background process
         DispatchQueue.main.async() {
-            let navigationsOnStack = self.navigationController?.viewControllers
             //self.dismiss(animated: true, completion: nil)
             //URL we GIF is stored
             let gif = Gif(videoURL: videoURL, start: start, duration: duration)
@@ -213,19 +217,61 @@ extension UIViewController: UIImagePickerControllerDelegate {
     
     func displayGIF(gif: Gif) {
         let gifEditorVC = storyboard?.instantiateViewController(withIdentifier: "GifEditorViewController") as! GifEditorViewController
+        
         gifEditorVC.gif = gif
         
-        if let numberOfNavigationsController = navigationController?.viewControllers.capacity  {
-            if numberOfNavigationsController > 1 {
-                gifEditorVC.context = navigationController?.viewControllers[0] as! SavedGifsViewController
-            } else {
-                gifEditorVC.context = self as! SavedGifsViewController
-            }
-            
+        
+        if isGifCreatedFromWelcomeScreen() {
+            gifEditorVC.delegate = navigationController?.viewControllers[0] as! SavedGifsViewController
+        } else {
+            gifEditorVC.delegate = self as! SavedGifsViewController
         }
         navigationController?.pushViewController(gifEditorVC, animated: true)
         
         // Dismiss photoLibraryController or recordLibraryController
         self.dismiss(animated: true, completion: nil)
     }
+    
+    func isGifCreatedFromWelcomeScreen() -> Bool {
+    
+//        if let numberOfNavigationsController = navigationController?.viewControllers.capacity  {
+//            return numberOfNavigationsController > 1
+//        } else {
+//            return false
+//        }
+        let pathVC = whatPath()
+        return pathVC == .welcome
+        
+    }
+    
+    func isGifEditingFromDetail() -> Bool {
+        let pathVC = whatPath()
+        return pathVC == .detail
+    }
+    
+    enum FromVC {
+        case undertermined, welcome, editor, detail
+    }
+    
+    
+    // The Navigation path that follow
+    func whatPath () -> FromVC {
+        let vcs = navigationController?.viewControllers
+        if let vcs = vcs {
+            if vcs.count > 1 {
+                switch vcs[1] {
+                    case is WelcomeViewController:
+                        return .welcome
+                    case is DetailViewController:
+                        return .detail
+                    case is GifEditorViewController:
+                        return .editor
+                    default:
+                        return .undertermined
+                }
+            }
+        }
+        return .undertermined
+    }
+    
 }

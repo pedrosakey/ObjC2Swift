@@ -279,7 +279,7 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="2fg-hG-msF"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="13"/>
                                         <state key="normal" title="CREATE AND SAVE">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
@@ -324,8 +324,10 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="createAndSaveButton" destination="xoi-MZ-GNH" id="vmS-MT-NgC"/>
                         <outlet property="gifImageView" destination="HQu-c2-zTO" id="aQ8-Rc-HFb"/>
                         <outlet property="newCaption" destination="5TV-gn-8FI" id="rnn-Lq-DcV"/>
+                        <outlet property="shareButton" destination="lnU-9g-0xe" id="cgZ-Ac-LXr"/>
                         <segue destination="PH9-LS-bQt" kind="unwind" identifier="unwindToSavedGifsVC" unwindAction="unwindToSavedGifsViewControllerWithSegue:" id="dbf-M0-CFA"/>
                     </connections>
                 </viewController>
@@ -384,7 +386,7 @@
                                             <userDefinedRuntimeAttribute type="boolean" keyPath="layer.maskToBounds" value="NO"/>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <action selector="shareGif:" destination="Ilf-GF-t1a" eventType="touchUpInside" id="PeD-bU-NbS"/>
+                                            <action selector="editGif:" destination="Ilf-GF-t1a" eventType="touchUpInside" id="zNN-1j-U6H"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SFJ-fw-e1B">
